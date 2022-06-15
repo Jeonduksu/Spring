@@ -1,0 +1,10 @@
+Spring 기본 옵션이라 생각하면 되는 순서
+
+1.pom.xml : mysql, mybatis, mybatis-spring, commons-dbcp, spring-orm
+2.web.xml : applicationContext.xml , mapping(url-pattrn)*.do로 바꾸기
+3./WEB-INF/spring/sql/test_db.txt
+4.dto,dao,service,controller
+5.src/main/resources/mybatis/board-mapper.xml
+6.src/main/resources/mybatis/db.properties.txt
+7./WEB-INF/spring/sql/config.xml
+8.applicationContext.xml, servlet-context.xml
