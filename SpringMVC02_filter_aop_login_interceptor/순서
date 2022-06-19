@@ -1,0 +1,35 @@
+StpringMVC02
+
+1.pom.xml : mysql, mybatis, mybatis-spring, commons-dbcp, spring-orm
+2. web.xml : applicationContext.xml , mapping(url-pattern)*.do로바꾸기,encoding filter 추가
+3./WEB-INF/spring/sql/test_db.txt
+4.dto,dao,service,controller
+5.src/main/resources/mybatis/board-mapper.xml
+6.src/main/resources/mybatis/db.properties
+7./WEB-INF/spring/sqls/config.xml
+8.applicationContext.xml,servlet-context.xml
+
+_filter
+9. com/mvc/upgrade/common/filter/Logfilter(impl javax.servlet.Filter)
+10.web.xml
+
+
+_aop
+11.pom.xml : aspectjweaver, aspectjrt(이미 있음)
+12.com/mvc/upgrade/common/aop/LogAoP
+13. WEB-INF/spring/appServlet/aop-context.xml
+14.web.xml : aop-context 추가
+
+
+_login
+15.pom.xml : jackson-core, jackson-databind, jackson-annotations
+16.WEB-INF/spring/sql/test_db.txt
+17. dto, dao, service, controller
+18. src/main/resources/mybatis/member-mapper.xml
+19. WEB-INF/spring/sql/config.xml
+
+
+_intercptor
+20. com/mvc/upgrade/common/interceptor/LoginInterceptor(impl HandlerInterceptor)
+21. servlet-context.xml
+

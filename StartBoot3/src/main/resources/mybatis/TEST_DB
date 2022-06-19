@@ -1,0 +1,7 @@
+create table TEST_DB(
+	NAME VARCHAR(400) not null,
+	AGE INT,
+	ADDR VARCHAR(1000) not null
+);
+
+select * from TEST_DB;

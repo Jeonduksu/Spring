@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<h1>Expression</h1>
+	<p th:text="|Hello,${name}|">Hello,$name</p>
+	<p th:text="${dto.subject}">dto.subject</p>
+	
+	<!-- 영역잡는 태그 div,span태그로 담을수 있다 -->
+	<div th:object="${dto}">
+		<p th:text="*{subject}">subject</p>
+		<p th:text="*{seq}">seq</p>
+	</div>
+	
+	<p th:text="${list.get(0).subject}"></p>
+	
+	<table border="1">
+		<tr>
+			<th>SUBJECT</th>
+			<th>SEQ</th>
+		</tr>
+		<!-- each:반복문 -->
+		<tr th:each="dto:${list}">
+			<td th:object="${dto}">
+				<span th:text="*{subject}"></span>
+			</td>
+			<td th:object="${dto}">
+				<span th:text="*{seq}"></span>
+			</td>
+		</tr>		
+	</table>
+	
+	<table border="1">
+		<tr th:if="${iflist} ne null">
+			<td>list가 null아닙니다!</td>
+		</tr>
+		<!-- if의 반대 unless -->
+		<tr th:unless="${iflist} ne null">
+			<td>list가 null이 맞습니다.!!</td>
+		</tr>
+	</table>
+	
+	<!-- sequence 1씩 증가 1부터 3까지 -->
+	<div th:each="num:${#numbers.sequence(1,3)}">
+		<th:block th:switch="${num}">
+			<p th:case="1" th:text="|this is ${num}|"></p>
+			<p th:case="2" th:text="|this is ${num}|"></p>
+			<p th:case="3" th:text="|this is ${num}|"></p>
+		</th:block>
+	</div>
+	
+	
+</body>
+</html>

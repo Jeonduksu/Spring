@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="favoriteFood" name="favoriteFood" class="com.test02.Food">
+		<property name="name" value="갈비찜"></property>
+		<property name="price" value="25000"></property>
+	</bean>
+	<bean id="unFavoriteFood" name="unFavoriteFood" class="com.test02.Food">
+		<constructor-arg value="치킨" />
+		<constructor-arg value="20000" />
+	</bean>
+	
+	<bean id="myFood" class="com.test02.MyFood" autowire="default" />
+	<!-- 
+		ByName : id/name 이 field(setter)랑 같은 이름의 bean을 자동 할당
+		byType : setter의 parameter타입과 같은 타입의 bean을 자동 할당
+		constructor : 생성자 parameter타입과 같은 타입의 bean이 있으면 자동 할당, id/name 으로 호출
+		default : 생성자에 할당할 type이 있는지 확인 후(constructor) -> 없으면 메소드(setter)에서 type이 있는지 확인하여 할당(byType)
+		-> @Autowired : 어노테이션이 이방식으로 동작
+	
+	 -->
+</beans>

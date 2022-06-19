@@ -1,0 +1,30 @@
+Spring Annotaion
+- Java 1.5 부터 지원
+- 빈과 관련된 정보를 설정 할 수 있다.
+
+
+Spring 에서 Annotation을 사용하려면 다음과 같은 설정 필요
+1.<bean class = "org.springframework.beans.factory.annotaion.CommonAnnotationBeanPostProsessor">
+2.<context:annotation-config>
+	@Autowired,@Required, @Resource, ... 등의 annotation을 자동 처리해주는 bean post processor
+3.<context:component-scan>
+	@Component, @controller, @Service, @Repository 등의 annotataion 을 자동 처리
+4. <mvc:annotation-driven/>
+	@RequestMapping, @valid 등의 spring mvc component들을 자동 처리
+
+	
+- 4개의 stereotype annotation
+@Component : stereotype anno 의 조상
+@Controller : Spring MVC에서 컨트롤러로 인식
+@Service : 비즈니스 클래스(biz)에 사용
+@Repository : 일반적으로 dao에 사용, Exception을 DataAccessException으로 변환
+
+1.@Component : 클래스에 선언, 자동으로 bean 등록, bean의 이름은 해당 클래스명이 사용된다(첫글자 소문자)
+2.@Autowired : 의존관계 자동 설정, 생성자필드메소드 적용가능
+3.@Qualifier : autowired에서 동일 타입 반객체가 2개 이상 존재 할 시 특정빈을 사용하도록 선언
+		@Autowired
+		@Qualifier("test")
+4.@Required : 필수 프로퍼티임을 명시, setter에 붙인다.
+5.@Repository
+6.@Service
+7.@Resource : 어플리케이션에서 필요로 하는 자원을 자동연결

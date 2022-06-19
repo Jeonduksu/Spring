@@ -1,0 +1,24 @@
+drop table MYBOARD;
+
+create table MYBOARD(
+	MYNO INT auto_increment primary key,
+	MYNAME VARCHAR(1000) not null,
+	MYTITLE VARCHAR(2000) not null,
+	MYCONTENT VARCHAR(4000) not null,
+	MYDATE DATE not NULL
+);
+
+insert into MYBOARD VALUES(null, '관리지','스프링 테스트','SPRING MVC 어렵다',NOW());
+
+select * from MYBOARD;
+
+create table MYMEMBER(
+	MEMBERNO INT auto_increment primary key,
+	MEMBERID VARCHAR(1000) not null,
+	MEMBERPW VARCHAR(1000) not null,
+	MEMBERNAME VARCHAR(1000) not NULL
+);
+
+insert into MYMEMBER VALUES(null, 'admin','1234','관리자');
+
+select * from MYMEMBER;
