@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<!-- alias = 지칭을 정해준다.! -->
+	<typeAliases>
+		<typeAlias type="com.mvc.upgrade.model.dto.BoardDto" alias="boardDto"/>
+		<typeAlias type="com.mvc.upgrade.model.dto.MemberDto" alias="MemberDto"/>
+	</typeAliases>
+	
+	<!-- resource:src/main/resources와 연결 -->
+	<mappers>
+		<mapper resource="/mybatis/board-mapper.xml"/>
+		<mapper resource="/mybatis/member-mapper.xml"/>
+	</mappers>
+</configuration>
